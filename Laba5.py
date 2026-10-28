@@ -70,5 +70,38 @@ while True:
         break
 spisok=[]
 for i in range(n):
-    s=random.randint(0,100)
+    s=random.randint(-100,100)
     spisok.append(s)
+print("Ваш список со случайными элементами:", spisok)
+su=0
+for i in range(n):
+    if (i+1) % 2 !=0:
+        su += spisok[i]
+print("Сумма элементов списка с нечетными номерами:",su)
+
+
+
+ot1=-1
+ot2=-1
+for i in range(n):
+    if spisok[i]<0:
+        ot1=i
+        break
+for i in range(n-1,-1,-1):
+    if spisok[i]<0:
+        ot2=i
+        break
+su_ot = 0
+if ot1!=-1:
+    if ot1 == ot2:
+        print("Отрицательное число единственное в списке!")
+    else:
+        for i in range(ot1 + 1, ot2):
+            su_ot+=spisok[i]
+        if su_ot==0:
+            print("Сумма чисел между первым и последним отрицательными числами (исключая границы):", su_ot)
+            print("(Так как элементы не содержат между собой чисел.)")
+        else:
+            print("Сумма чисел между первым и последним отрицательными числами (исключая границы):", su_ot)
+else:
+    print("Недостаточно отрицательных элементов в списке!")
