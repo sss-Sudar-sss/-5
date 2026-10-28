@@ -53,3 +53,22 @@ for i in stroka:
             res += i
 print("Ваша строка:", stroka)
 print("Ваша изменненая строка (без текста в скобках):", res)
+
+
+#Задание 3
+print("#Задание 3")
+while True:
+    print("Введите размер списка (натуральное число):")
+    try:
+        n=int(input())
+    except ValueError:
+        print("Размер списка это натуральное число!")
+        continue
+    if n<=0:
+        print("Размер списка это положительное число и не может быть равно нулю!")
+    else:
+        break
+spisok=[]
+for i in range(n):
+    s=random.randint(0,100)
+    spisok.append(s)
